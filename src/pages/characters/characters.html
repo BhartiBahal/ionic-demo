@@ -5,9 +5,9 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-card *ngFor="let character of characters">
+  <ion-card *ngFor="let character of characters" (click)="showPersonDetails(character)">
     <ion-card-header>{{ character.name }}</ion-card-header>
-    <ion-card-content>
+    <!--<ion-card-content>
       <ion-row>
         <ion-col>Film Count:</ion-col><ion-col> {{ character.films.length }} </ion-col>
       </ion-row>
@@ -32,6 +32,6 @@
       <ion-row>
         <ion-col>Skin Color:</ion-col><ion-col> {{ character.skin_color }} </ion-col>
       </ion-row>
-    </ion-card-content>
+    </ion-card-content>-->
   </ion-card>
 </ion-content>

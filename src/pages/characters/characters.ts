@@ -25,10 +25,16 @@ export class CharactersPage {
                 this.appUi.dismissLoading();
             }
         );
+        console.log('test', this.characters);
     }
 
     ionViewDidLoad() {
         console.log('ionViewDidLoad CharactersPage');
+    }
+
+    showPersonDetails(person)
+    {
+        this.navCtrl.push('PersonDetailsPage', {person:person});
     }
 
 }
