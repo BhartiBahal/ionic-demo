@@ -29,7 +29,7 @@ FilmDetailsPageModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_2__film_details__["a" /* FilmDetailsPage */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__film_details__["a" /* FilmDetailsPage */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__film_details__["a" /* FilmDetailsPage */]),
         ],
         exports: [
             __WEBPACK_IMPORTED_MODULE_2__film_details__["a" /* FilmDetailsPage */]
@@ -59,14 +59,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-/**
- * Generated class for the FilmDetailsPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
 var FilmDetailsPage = (function () {
-    //characters: any;
     function FilmDetailsPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
@@ -86,11 +79,11 @@ var FilmDetailsPage = (function () {
     return FilmDetailsPage;
 }());
 FilmDetailsPage = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_6" /* Component */])({
-        selector: 'page-film-details',template:/*ion-inline-start:"/home/bharti/ionicapps/ionicTutorialApp/src/pages/film-details/film-details.html"*/'<!--\n  Generated template for the FilmDetailsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar color="danger">\n    <ion-title>{{ film.title }}</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-card>\n    <ion-card-content>\n      {{film.opening_crawl}}\n    </ion-card-content>\n  </ion-card>\n  <!--Film ID : {{filmId}}\n  <button ion-button full (click)="goBack()">Go Back</button>-->\n  <ion-list>\n    <ion-list-header>\n      More Details\n    </ion-list-header>\n    <button ion-item (click)="getFilmCharacters()">Characters</button>\n    <button ion-item (click)="getFilmPlanets()">Planets</button>\n    <button ion-item (click)="getFilmStarships()">Starships</button>\n    <button ion-item (click)="getFilmVehicles()">Vehicles</button>\n    <button ion-item (click)="getFilmSpecies()">Species</button>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/home/bharti/ionicapps/ionicTutorialApp/src/pages/film-details/film-details.html"*/,
+        selector: 'page-film-details',template:/*ion-inline-start:"D:\ionicApps\ionic-demo\src\pages\film-details\film-details.html"*/'<ion-header>\n\n  <ion-navbar color="danger">\n\n    <ion-title>{{ film.title }}</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-card>\n\n    <ion-card-content>\n\n      {{film.opening_crawl}}\n\n    </ion-card-content>\n\n  </ion-card>\n\n\n\n  <ion-list>\n\n    <ion-list-header>More Details</ion-list-header>\n\n    <button ion-item (click)="getFilmCharacters()">Characters</button>\n\n    <button ion-item (click)="getFilmPlanets()">Planets</button>\n\n    <button ion-item (click)="getFilmStarships()">Starships</button>\n\n    <button ion-item (click)="getFilmVehicles()">Vehicles</button>\n\n    <button ion-item (click)="getFilmSpecies()">Species</button>\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"D:\ionicApps\ionic-demo\src\pages\film-details\film-details.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
 ], FilmDetailsPage);
 
 //# sourceMappingURL=film-details.js.map

@@ -29,7 +29,7 @@ PlanetsPageModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_2__planets__["a" /* PlanetsPage */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__planets__["a" /* PlanetsPage */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__planets__["a" /* PlanetsPage */]),
         ],
         exports: [
             __WEBPACK_IMPORTED_MODULE_2__planets__["a" /* PlanetsPage */]
@@ -86,11 +86,11 @@ var PlanetsPage = (function () {
     return PlanetsPage;
 }());
 PlanetsPage = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_6" /* Component */])({
-        selector: 'page-planets',template:/*ion-inline-start:"/home/bharti/ionicapps/ionicTutorialApp/src/pages/planets/planets.html"*/'<!--\n  Generated template for the PlanetsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Planets</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-list>\n    <button ion-item *ngFor="let planet of (planets| async)?.results" (click)="openPlanetDetails(planet)">{{planet.name}}</button>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/home/bharti/ionicapps/ionicTutorialApp/src/pages/planets/planets.html"*/,
+        selector: 'page-planets',template:/*ion-inline-start:"D:\ionicApps\ionic-demo\src\pages\planets\planets.html"*/'<!--\n\n  Generated template for the PlanetsPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Planets</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <ion-list>\n\n    <button ion-item *ngFor="let planet of (planets| async)?.results" (click)="openPlanetDetails(planet)">{{planet.name}}</button>\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"D:\ionicApps\ionic-demo\src\pages\planets\planets.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_api_api__["a" /* ApiProvider */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_api_api__["a" /* ApiProvider */]])
 ], PlanetsPage);
 
 //# sourceMappingURL=planets.js.map

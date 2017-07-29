@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AppUi } from "../../providers/app-ui";
 
-/**
- * Generated class for the FilmDetailsPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
 @IonicPage()
 @Component({
   selector: 'page-film-details',
@@ -14,7 +9,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class FilmDetailsPage {
   film: any;
-  //characters: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.film = this.navParams.get('film');

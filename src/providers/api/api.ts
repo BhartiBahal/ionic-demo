@@ -27,8 +27,19 @@ export class ApiProvider {
     return this.http.get('http://swapi.co/api/planets').map(res => res.json());
   }
 
-  getCharacterData(apiUrl) {
-    console.log(apiUrl);
-    return this.http.get(apiUrl).map(res => res.json());
+  getCharactersData(apiUrls) {
+    let pros:Array<any> = [];
+
+    for (let apiUrl of apiUrls) {
+      pros.push(new Promise((resolve, reject) => {
+        this.http.get(apiUrl).subscribe((res) => {
+          resolve(res.json());
+        }, (err) => {
+          reject(err);
+        });
+      }));
+    }
+
+    return Promise.all(pros);
   }
 }

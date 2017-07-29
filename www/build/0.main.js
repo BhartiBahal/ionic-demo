@@ -29,7 +29,7 @@ TabsPageModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_2__tabs__["a" /* TabsPage */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__tabs__["a" /* TabsPage */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__tabs__["a" /* TabsPage */]),
         ],
         exports: [
             __WEBPACK_IMPORTED_MODULE_2__tabs__["a" /* TabsPage */]
@@ -79,11 +79,11 @@ var TabsPage = (function () {
     return TabsPage;
 }());
 TabsPage = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_6" /* Component */])({
-        selector: 'page-tabs',template:/*ion-inline-start:"/home/bharti/ionicapps/ionicTutorialApp/src/pages/tabs/tabs.html"*/'\n<ion-tabs>\n  <ion-tab [root]="tab1" tabTitle="Films" tabIcon="film"></ion-tab>\n  <ion-tab [root]="tab2" tabTitle="People" tabIcon="people"></ion-tab>\n  <ion-tab [root]="tab3" tabTitle="Planets" tabIcon="planet"></ion-tab>\n</ion-tabs>\n'/*ion-inline-end:"/home/bharti/ionicapps/ionicTutorialApp/src/pages/tabs/tabs.html"*/,
+        selector: 'page-tabs',template:/*ion-inline-start:"D:\ionicApps\ionic-demo\src\pages\tabs\tabs.html"*/'\n\n<ion-tabs>\n\n  <ion-tab [root]="tab1" tabTitle="Films" tabIcon="film"></ion-tab>\n\n  <ion-tab [root]="tab2" tabTitle="People" tabIcon="people"></ion-tab>\n\n  <ion-tab [root]="tab3" tabTitle="Planets" tabIcon="planet"></ion-tab>\n\n</ion-tabs>\n\n'/*ion-inline-end:"D:\ionicApps\ionic-demo\src\pages\tabs\tabs.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
 ], TabsPage);
 
 //# sourceMappingURL=tabs.js.map

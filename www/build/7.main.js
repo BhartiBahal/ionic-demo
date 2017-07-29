@@ -29,7 +29,7 @@ CharactersPageModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_2__characters__["a" /* CharactersPage */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__characters__["a" /* CharactersPage */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__characters__["a" /* CharactersPage */]),
         ],
         exports: [
             __WEBPACK_IMPORTED_MODULE_2__characters__["a" /* CharactersPage */]
@@ -49,6 +49,7 @@ CharactersPageModule = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(97);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_api_api__ = __webpack_require__(195);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_app_ui__ = __webpack_require__(279);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -61,48 +62,36 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-/**
- * Generated class for the CharactersPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
+
 var CharactersPage = (function () {
-    function CharactersPage(navCtrl, navParams, apiProvider) {
+    function CharactersPage(navCtrl, navParams, apiProvider, appUi) {
+        var _this = this;
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.apiProvider = apiProvider;
-        this.characters = this.navParams.get('characters');
-        //console.log('characters param', this.characters);
+        this.appUi = appUi;
+        this.characters = [];
+        this.appUi.showLoading();
+        this.apiProvider.getCharactersData(this.navParams.get('characters')).then(function (res) {
+            console.log(res);
+            _this.characters = res;
+            _this.appUi.dismissLoading();
+        }, function (err) {
+            console.log(err);
+            _this.appUi.dismissLoading();
+        });
     }
     CharactersPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad CharactersPage');
     };
-    CharactersPage.prototype.getCharacterName = function (character) {
-        var _this = this;
-        console.log('test');
-        console.log(character);
-        //return 'test';
-        //var characterName;
-        this.characterData = this.apiProvider.getCharacterData(character);
-        //setTimeout(() => {
-        this.characterData.subscribe(function (data) {
-            console.log(data);
-            _this.characterName = data.name;
-            //return 'test-data-name';
-        });
-        //}, 500);
-        return this.characterName;
-        //console.log(this.characterData);
-    };
     return CharactersPage;
 }());
 CharactersPage = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_6" /* Component */])({
-        selector: 'page-characters',template:/*ion-inline-start:"/home/bharti/ionicapps/ionicTutorialApp/src/pages/characters/characters.html"*/'<!--\n  Generated template for the CharactersPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Characters</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-list>\n    <ion-item *ngFor="let character of character">{{ getCharacterName(character) }} </ion-item>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/home/bharti/ionicapps/ionicTutorialApp/src/pages/characters/characters.html"*/,
+        selector: 'page-characters',template:/*ion-inline-start:"D:\ionicApps\ionic-demo\src\pages\characters\characters.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>Characters</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-card *ngFor="let character of characters">\n\n    <ion-card-header>{{ character.name }}</ion-card-header>\n\n    <ion-card-content>\n\n      <ion-row>\n\n        <ion-col>Film Count:</ion-col><ion-col> {{ character.films.length }} </ion-col>\n\n      </ion-row>\n\n      <ion-row>\n\n        <ion-col>Gender:</ion-col><ion-col> {{ character.gender }} </ion-col>\n\n      </ion-row>\n\n      <ion-row>\n\n        <ion-col>Height:</ion-col><ion-col> {{ character.height }} </ion-col>\n\n      </ion-row>\n\n      <ion-row>\n\n        <ion-col>Mass:</ion-col><ion-col> {{ character.mass }} </ion-col>\n\n      </ion-row>\n\n      <ion-row>\n\n        <ion-col>Birth Year:</ion-col><ion-col> {{ character.birth_year }} </ion-col>\n\n      </ion-row>\n\n      <ion-row>\n\n        <ion-col>Eye Color:</ion-col><ion-col> {{ character.eye_color }} </ion-col>\n\n      </ion-row>\n\n      <ion-row>\n\n        <ion-col>Hair Color:</ion-col><ion-col> {{ character.hair_color }} </ion-col>\n\n      </ion-row>\n\n      <ion-row>\n\n        <ion-col>Skin Color:</ion-col><ion-col> {{ character.skin_color }} </ion-col>\n\n      </ion-row>\n\n    </ion-card-content>\n\n  </ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"D:\ionicApps\ionic-demo\src\pages\characters\characters.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_api_api__["a" /* ApiProvider */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_api_api__["a" /* ApiProvider */], __WEBPACK_IMPORTED_MODULE_3__providers_app_ui__["a" /* AppUi */]])
 ], CharactersPage);
 
 //# sourceMappingURL=characters.js.map

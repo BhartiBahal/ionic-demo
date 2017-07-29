@@ -1,20 +1,37 @@
-<!--
-  Generated template for the CharactersPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
   <ion-navbar>
     <ion-title>Characters</ion-title>
   </ion-navbar>
-
 </ion-header>
 
-
 <ion-content padding>
-  <ion-list>
-    <ion-item *ngFor="let character of character">{{ getCharacterName(character) }} </ion-item>
-  </ion-list>
+  <ion-card *ngFor="let character of characters">
+    <ion-card-header>{{ character.name }}</ion-card-header>
+    <ion-card-content>
+      <ion-row>
+        <ion-col>Film Count:</ion-col><ion-col> {{ character.films.length }} </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>Gender:</ion-col><ion-col> {{ character.gender }} </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>Height:</ion-col><ion-col> {{ character.height }} </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>Mass:</ion-col><ion-col> {{ character.mass }} </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>Birth Year:</ion-col><ion-col> {{ character.birth_year }} </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>Eye Color:</ion-col><ion-col> {{ character.eye_color }} </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>Hair Color:</ion-col><ion-col> {{ character.hair_color }} </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>Skin Color:</ion-col><ion-col> {{ character.skin_color }} </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

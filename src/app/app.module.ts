@@ -7,6 +7,7 @@ import { HttpModule } from '@angular/http';
 
 import { MyApp } from './app.component';
 import { ApiProvider } from '../providers/api/api';
+import { AppUi } from '../providers/app-ui';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { ApiProvider } from '../providers/api/api';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    ApiProvider
+    ApiProvider,
+    AppUi
   ]
 })
 export class AppModule {}
