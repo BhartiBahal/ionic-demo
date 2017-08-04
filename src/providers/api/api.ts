@@ -16,21 +16,9 @@ export class ApiProvider {
   }
 
   getFilms(films=null) {
-    if(films == null){
+    //if(films == null){
       return this.http.get('http://swapi.co/api/films').map(res => res.json());
-    } else {
-      let pros:Array<any> = [];
-      for (let filmUrl of films) {
-        pros.push(new Promise((resolve, reject) => {
-          this.http.get(filmUrl).subscribe((res) => {
-            resolve(res.json());
-          }, (err) => {
-            reject(err);
-          });
-        }));
-      }
-      return Promise.all(pros);
-    }
+    //}
   }
 
   getPeople() {
@@ -56,4 +44,40 @@ export class ApiProvider {
 
     return Promise.all(pros);
   }
+
+  getFilmsData(filmUrls) {
+    let pros:Array<any> = [];
+
+    for (let filmUrl of filmUrls) {
+      pros.push(new Promise((resolve, reject) => {
+        this.http.get(filmUrl).subscribe((res) => {
+          resolve(res.json());
+        }, (err) => {
+          reject(err);
+        });
+      }));
+    }
+
+    return Promise.all(pros);
+  }
+
+  getPlanetsData(planetUrls) {
+    let pros:Array<any> = [];
+
+    for (let planetUrl of planetUrls) {
+      pros.push(new Promise((resolve, reject) => {
+        this.http.get(planetUrl).subscribe(
+          (res) => {
+            resolve(res.json());
+          },
+          (err) => {
+            reject(err);
+          }
+        );
+      }));
+    }
+
+    return Promise.all(pros);
+  }
+
 }

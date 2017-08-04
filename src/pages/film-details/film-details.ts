@@ -29,4 +29,9 @@ export class FilmDetailsPage {
     this.navCtrl.push('CharactersPage', {characters: this.film.characters});
   }
 
+  getFilmPlanets()
+  {
+    this.navCtrl.push('PlanetsPage', {planets: this.film.planets});
+  }
+
 }

@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ApiProvider } from "../../providers/api/api";
 import { AppUi } from "../../providers/app-ui";
-import { Observable } from 'rxjs/Observable';
 
 @IonicPage()
 @Component({

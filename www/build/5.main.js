@@ -72,13 +72,25 @@ var FilmsPage = (function () {
         this.appUi = appUi;
         this.films = [];
         this.appUi.showLoading();
-        this.apiProvider.getFilms().subscribe(function (data) {
-            console.log('my data : ', data);
-            _this.films = data.results;
-            _this.appUi.dismissLoading();
-        }, function (err) {
-            console.log(err);
-        });
+        var filmsParam = this.navParams.get('films');
+        if (filmsParam == undefined) {
+            this.apiProvider.getFilms().subscribe(function (data) {
+                _this.films = data.results;
+                _this.appUi.dismissLoading();
+            }, function (err) {
+                console.log(err);
+            });
+        }
+        else {
+            this.apiProvider.getFilmsData(filmsParam).then(function (res) {
+                console.log(res);
+                _this.films = res;
+                _this.appUi.dismissLoading();
+            }, function (err) {
+                console.log(err);
+                _this.appUi.dismissLoading();
+            });
+        }
     }
     FilmsPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad FilmsPage');

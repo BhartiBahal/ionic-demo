@@ -10,13 +10,30 @@
       {{film.opening_crawl}}
     </ion-card-content>
   </ion-card>
-
-  <ion-list>
-    <ion-list-header>More Details</ion-list-header>
-    <button ion-item (click)="getFilmCharacters()">Characters</button>
-    <button ion-item (click)="getFilmPlanets()">Planets</button>
-    <button ion-item (click)="getFilmStarships()">Starships</button>
-    <button ion-item (click)="getFilmVehicles()">Vehicles</button>
-    <button ion-item (click)="getFilmSpecies()">Species</button>
-  </ion-list>
+  <ion-card>
+    <ion-card-content>
+      <ion-row>
+        <ion-col><ion-note>Directed By :</ion-note></ion-col>
+        <ion-col>{{ film.director }}</ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-content>
+      <ion-row>
+        <ion-col><ion-note>Produced By :</ion-note></ion-col>
+        <ion-col>{{ film.producer }}</ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header color="primary">More Details</ion-card-header>
+    <ion-list>
+      <button ion-item (click)="getFilmCharacters()">Characters <ion-badge item-end>{{ film.characters.length }}</ion-badge></button>
+      <button ion-item (click)="getFilmPlanets()">Planets <ion-badge item-end>{{ film.planets.length }}</ion-badge></button>
+      <button ion-item (click)="getFilmStarships()">Starships <ion-badge item-end>{{ film.starships.length }}</ion-badge></button>
+      <button ion-item (click)="getFilmVehicles()">Vehicles <ion-badge item-end>{{ film.vehicles.length }}</ion-badge></button>
+      <button ion-item (click)="getFilmSpecies()">Species <ion-badge item-end>{{ film.species.length }}</ion-badge></button>
+    </ion-list>
+  </ion-card>
 </ion-content>

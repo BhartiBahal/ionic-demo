@@ -77176,28 +77176,10 @@ var ApiProvider = (function () {
         console.log('Hello ApiProvider Provider');
     }
     ApiProvider.prototype.getFilms = function (films) {
-        var _this = this;
         if (films === void 0) { films = null; }
-        if (films == null) {
-            return this.http.get('http://swapi.co/api/films').map(function (res) { return res.json(); });
-        }
-        else {
-            var pros = [];
-            var _loop_1 = function (filmUrl) {
-                pros.push(new Promise(function (resolve, reject) {
-                    _this.http.get(filmUrl).subscribe(function (res) {
-                        resolve(res.json());
-                    }, function (err) {
-                        reject(err);
-                    });
-                }));
-            };
-            for (var _i = 0, films_1 = films; _i < films_1.length; _i++) {
-                var filmUrl = films_1[_i];
-                _loop_1(filmUrl);
-            }
-            return Promise.all(pros);
-        }
+        //if(films == null){
+        return this.http.get('http://swapi.co/api/films').map(function (res) { return res.json(); });
+        //}
     };
     ApiProvider.prototype.getPeople = function () {
         return this.http.get('http://swapi.co/api/people').map(function (res) { return res.json(); });
@@ -77208,7 +77190,7 @@ var ApiProvider = (function () {
     ApiProvider.prototype.getCharactersData = function (apiUrls) {
         var _this = this;
         var pros = [];
-        var _loop_2 = function (apiUrl) {
+        var _loop_1 = function (apiUrl) {
             pros.push(new Promise(function (resolve, reject) {
                 _this.http.get(apiUrl).subscribe(function (res) {
                     resolve(res.json());
@@ -77219,7 +77201,43 @@ var ApiProvider = (function () {
         };
         for (var _i = 0, apiUrls_1 = apiUrls; _i < apiUrls_1.length; _i++) {
             var apiUrl = apiUrls_1[_i];
-            _loop_2(apiUrl);
+            _loop_1(apiUrl);
+        }
+        return Promise.all(pros);
+    };
+    ApiProvider.prototype.getFilmsData = function (filmUrls) {
+        var _this = this;
+        var pros = [];
+        var _loop_2 = function (filmUrl) {
+            pros.push(new Promise(function (resolve, reject) {
+                _this.http.get(filmUrl).subscribe(function (res) {
+                    resolve(res.json());
+                }, function (err) {
+                    reject(err);
+                });
+            }));
+        };
+        for (var _i = 0, filmUrls_1 = filmUrls; _i < filmUrls_1.length; _i++) {
+            var filmUrl = filmUrls_1[_i];
+            _loop_2(filmUrl);
+        }
+        return Promise.all(pros);
+    };
+    ApiProvider.prototype.getPlanetsData = function (planetUrls) {
+        var _this = this;
+        var pros = [];
+        var _loop_3 = function (planetUrl) {
+            pros.push(new Promise(function (resolve, reject) {
+                _this.http.get(planetUrl).subscribe(function (res) {
+                    resolve(res.json());
+                }, function (err) {
+                    reject(err);
+                });
+            }));
+        };
+        for (var _i = 0, planetUrls_1 = planetUrls; _i < planetUrls_1.length; _i++) {
+            var planetUrl = planetUrls_1[_i];
+            _loop_3(planetUrl);
         }
         return Promise.all(pros);
     };
