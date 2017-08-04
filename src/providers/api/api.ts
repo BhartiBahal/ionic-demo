@@ -15,8 +15,10 @@ export class ApiProvider {
     console.log('Hello ApiProvider Provider');
   }
 
-  getFilms() {
-    return this.http.get('http://swapi.co/api/films').map(res => res.json());
+  getFilms(films=null) {
+    //if(films == null){
+      return this.http.get('http://swapi.co/api/films').map(res => res.json());
+    //}
   }
 
   getPeople() {
@@ -27,7 +29,7 @@ export class ApiProvider {
     return this.http.get('http://swapi.co/api/planets').map(res => res.json());
   }
 
-  getCharactersData(apiUrls) {
+  getCharactersData(apiUrls)  {
     let pros:Array<any> = [];
 
     for (let apiUrl of apiUrls) {
@@ -42,4 +44,40 @@ export class ApiProvider {
 
     return Promise.all(pros);
   }
+
+  getFilmsData(filmUrls) {
+    let pros:Array<any> = [];
+
+    for (let filmUrl of filmUrls) {
+      pros.push(new Promise((resolve, reject) => {
+        this.http.get(filmUrl).subscribe((res) => {
+          resolve(res.json());
+        }, (err) => {
+          reject(err);
+        });
+      }));
+    }
+
+    return Promise.all(pros);
+  }
+
+  getPlanetsData(planetUrls) {
+    let pros:Array<any> = [];
+
+    for (let planetUrl of planetUrls) {
+      pros.push(new Promise((resolve, reject) => {
+        this.http.get(planetUrl).subscribe(
+          (res) => {
+            resolve(res.json());
+          },
+          (err) => {
+            reject(err);
+          }
+        );
+      }));
+    }
+
+    return Promise.all(pros);
+  }
+
 }

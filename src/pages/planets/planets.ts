@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ApiProvider } from '../../providers/api/api';
-import { Observable } from 'rxjs/Observable';
+import { AppUi } from '../../providers/app-ui';
 
 /**
  * Generated class for the PlanetsPage page.
@@ -15,12 +15,31 @@ import { Observable } from 'rxjs/Observable';
   templateUrl: 'planets.html',
 })
 export class PlanetsPage {
-  planets : Observable<any>;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public apiProvider: ApiProvider) {
-    this.planets = this.apiProvider.getPlanets();
-    this.planets.subscribe(data => {
-      console.log('my data : ', data);
-    });
+  private planets = [];
+  constructor(public navCtrl: NavController, public navParams: NavParams, public apiProvider: ApiProvider, public appUi: AppUi) {
+    this.appUi.showLoading();
+    let planetsParams = this.navParams.get('planets');
+    if(planetsParams == undefined) {
+      this.apiProvider.getPlanets().subscribe(data => {
+        console.log('my data : ', data);
+        this.planets = data.results;
+        this.appUi.dismissLoading();
+      }, (err) => {
+        console.log(err);
+      });
+    } else {
+      this.apiProvider.getPlanetsData(planetsParams).then(
+        (res) => {
+          console.log(res);
+          this.planets = res;
+          this.appUi.dismissLoading();
+        },
+        (err) => {
+          console.log(err);
+          this.appUi.dismissLoading();
+        }
+      );
+    }
   }
 
   ionViewDidLoad() {

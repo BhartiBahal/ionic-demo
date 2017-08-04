@@ -16,13 +16,38 @@
 <ion-content padding>
   <ion-card>
     <ion-card-content>
-      <label>Height: </label>{{person.height}}<br>
+      <ion-row (click)="getPersonFilms(person.films)">
+        <ion-col>Film Count:</ion-col><ion-col> <ion-badge color="primary">{{ person.films.length }} </ion-badge></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>Height:</ion-col><ion-col> {{ person.height }} </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>Mass:</ion-col><ion-col> {{ person.mass }} </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>Hair Color:</ion-col><ion-col> {{ person.hair_color }} </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>Skin Color:</ion-col><ion-col> {{ person.skin_color }} </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>Eye Color:</ion-col><ion-col> {{ person.eye_color }} </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>Birth Year:</ion-col><ion-col> {{ person.birth_year }} </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>Gender:</ion-col><ion-col> {{ person.gender }} </ion-col>
+      </ion-row>
+
+      <!--<label>Height: </label>{{person.height}}<br>
       <label>Mass: </label>{{person.mass}}<br>
       <label>Hair Color: </label>{{person.hair_color}}<br>
       <label>Skin Color: </label>{{person.skin_color}}<br>
       <label>Eye Color: </label>{{person.eye_color}}<br>
       <label>Birth Year: </label>{{person.birth_year}}<br>
-      <label>Gender: </label>{{person.gender}}<br>
+      <label>Gender: </label>{{person.gender}}<br>-->
     </ion-card-content>
   </ion-card>
 </ion-content>

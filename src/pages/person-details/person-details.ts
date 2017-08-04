@@ -22,4 +22,7 @@ export class PersonDetailsPage {
     console.log('ionViewDidLoad PersonDetailsPage');
   }
 
+  getPersonFilms(){
+    this.navCtrl.push('FilmsPage', {films: this.person.films});
+  }
 }

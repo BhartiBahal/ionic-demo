@@ -13,13 +13,27 @@ export class FilmsPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public apiProvider: ApiProvider, public appUi: AppUi) {
     this.appUi.showLoading();
-    this.apiProvider.getFilms().subscribe(data => {
-      console.log('my data : ', data);
-      this.films = data.results;
-      this.appUi.dismissLoading();
-    }, (err) => {
-      console.log(err); 
-    });
+    let filmsParam = this.navParams.get('films');
+    if(filmsParam == undefined) {
+      this.apiProvider.getFilms().subscribe(data => {
+        this.films = data.results;
+        this.appUi.dismissLoading();
+      }, (err) => {
+        console.log(err);
+      });
+    } else {
+      this.apiProvider.getFilmsData(filmsParam).then(
+        (res) => {
+          console.log(res);
+          this.films = res;
+          this.appUi.dismissLoading();
+        },
+        (err) => {
+          console.log(err);
+          this.appUi.dismissLoading();
+        }
+      );
+    }
   }
 
   ionViewDidLoad() {
